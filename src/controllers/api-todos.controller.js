@@ -7,7 +7,7 @@ const { asyncHandler, requireToken } = require('../middlewares/middlewares');
 const router = Router();
 
 function initRoutes() {
-    router.get('/',  asyncHandler(getToDos));
+    router.get('/', asyncHandler(requireToken), asyncHandler(getToDos));
     router.get('/:id', asyncHandler(requireToken), asyncHandler(getToDoById));
     router.post('/', asyncHandler(requireToken), asyncHandler(createTodo));
     router.patch('/:id', asyncHandler(requireToken), asyncHandler(updateTodo));
@@ -16,15 +16,15 @@ function initRoutes() {
 }
 
 async function getToDos(req, res, next) {
-    const todos = await ToDo.findAll(
-    //     {
-    //     where: {
-    //         userId: req.token.userId,
-    //     },
-    //     include: [Comment] 
-    // }
-    );
-    res.status(200).json( todos );
+    const todos = await ToDo.findAll({
+        where: {
+            userId: req.token.userId,
+        },
+         include: [Comment] 
+    });
+    
+     res.status(200).json(todos);
+
 }
 
 async function getToDoById(req, res, next) {
@@ -45,10 +45,7 @@ async function getToDoById(req, res, next) {
 
 async function createTodo(req, res) {
     const todo = await ToDo.create({...req.body, userId:req.token.userId});
-    res.status(200).json({
-        "message": "ToDo сохранено",
-        todo
-    });
+    res.redirect(301, "/main");
 }
 
 async function updateTodo(req, res) {

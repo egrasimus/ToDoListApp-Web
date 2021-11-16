@@ -5,7 +5,6 @@ const ErrorResponse = require('../classes/error-response');
 const User = require('../dataBase/models/User.model');
 const Token = require('../dataBase/models/Token.model');
 const { asyncHandler } = require('../middlewares/middlewares');
-const  getToDos  = require('./api-todos.controller.js');
 
 const router = Router();
 
@@ -56,8 +55,9 @@ async function login(req, res, next) {
     }
 
     res.cookie('x-access-token', token.value, options) 
-    // res.status(200).json({ accessToken: token.value });
-    getToDos(res,req)
+   // res.sendFile("/home/a0598837/domains/a0598837.xsph.ru/public_html/index.html")
+    // res.json(token.value);
+    res.redirect(301, '/main')
 }
 
 initRoutes();
