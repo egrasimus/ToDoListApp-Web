@@ -31,6 +31,6 @@ app.use(notFound);
 app.use(errorHandler);
 
 //Create server
-http.createServer(app).listen(port, host, () => {
+http.createServer(app).listen(port, host ? host : null, () => {
   console.log(`Server is working on port ${port}`);
 });
