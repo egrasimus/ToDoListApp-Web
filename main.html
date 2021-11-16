@@ -2,18 +2,25 @@
 <html lang="ru">
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Mochiy+Pop+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <title>ToDoList|Регистрация</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+    <title>ToDoList|Создать задачу</title>
 </head>
+
 <body>
     <header class="header">
         <div class="logo_conteiner">
-            <div class="logo"> <a class="a_logo" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="312.933" height="77.872" viewBox="0 0 312.933 77.872">
+            <div class="logo"> <a class="a_logo" href="main.html"><svg xmlns="http://www.w3.org/2000/svg" width="312.933" height="77.872" viewBox="0 0 312.933 77.872">
   <g id="Сгруппировать_1" data-name="Сгруппировать 1" transform="translate(-150.369 -2.128)">
     <g id="Контур_5" data-name="Контур 5" transform="translate(403 20)" fill="none">
       <path d="M10,0H50A10,10,0,0,1,60,10V50A10,10,0,0,1,50,60H10A10,10,0,0,1,0,50V10A10,10,0,0,1,10,0Z" stroke="none"/>
@@ -32,44 +39,26 @@
             </ul>
         </nav>
     </header>
-    <div class="main-content">
-        <div class="cart">
-            <div class="heading">Регистрация</div>
-            <form action="/api/auth/registration" method="post">
-                <div class="input">
-                    <label for="POST-name">Имя:</label>
-                    <br>
-                    <input id="POST-name" type="text" name="name"> </div>
-                <div class="input">
-                    <label for="POST-login">Логин:</label>
-                    <br>
-                    <input id="POST-login" type="text" name="login"> </div>
-                <div class="input">
-                    <label for="POST-email">E-mail:</label>
-                    <br>
-                    <input id="POST-email" type="email" name="email"> </div>
-                <div class="input">
-                    <label for="POST-password">Пароль:</label>
-                    <br>
-                    <input id="POST-password" type="password" name="password"> </div>
-                <div class="input">
-                    <label for="POST-password-repeat">Подтвердите пароль:</label>
-                    <br>
-                    <input id="POST-password-repeat" type="password" name="password-repeat"> </div>
-                    <input class="button" type="submit" value="Регистрация">
-            </form>
-        </div>
-    </div>
-  <footer class="footer">
-        <ul>
-            <li class="foot"><a href="#" class="foot">О приложении</a></li>
-            <li class="foot"><a href="#" class="foot">О нас</a></li>
-            <li class="foot"><a href="#" class="foot">Справка</a></li>
+    <div class="main-content"   style="padding-top: 50px; padding-bottom: 50px; background: #98D7E0;">
+        <div class="panel" style="width: 30%; background: #98D7E0; border: none;" id ="data-wrapper">
+            
+            </div>
+            <form action="create.html">
+          <input class="button" type="submit" value="+" style="border-radius: 50%;margin: 25px auto; width: 50px; height: 50px; font-size: 35px; " >
+
+    </form>
+            </div>
+
+    <footer class="footer">
+          <ul>
+            <li class="foot"><a href="about.html" class="foot">О приложении</a></li>
+            <li class="foot"><a href="about_us.html" class="foot">О нас</a></li>
+            <li class="foot"><a href="reference.html" class="foot">Справка</a></li>
             <li class="foot"><a href="confidentiality.html" class="foot">Политика конфиденциальности</a></li>
         </ul>
         <p class="copy">Copyright &copy; 2021 ShestBrothers. All Rights Reserved.</p>
     </footer>
-    <script type="text/javascript" src="../ToDoList/js/script.js"> </script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
